@@ -60,6 +60,12 @@
         "type": "number",
         "default": 5,
         "minimum": 1
+      },
+      "logReadings": {
+        "title": "Log Every Reading",
+        "type": "boolean",
+        "default": true,
+        "description": "Write Base Load, Surplus, and Absolute Grid Flow to the normal Homebridge log after every successful poll."
       }
     }
   },
@@ -72,6 +78,7 @@
     "invertDirection",
     "deadbandWatts",
     "pollIntervalSeconds",
-    "requestTimeoutSeconds"
+    "requestTimeoutSeconds",
+    "logReadings"
   ]
 }

@@ -60,7 +60,8 @@ Manual `config.json` example:
   "invertDirection": false,
   "deadbandWatts": 1,
   "pollIntervalSeconds": 10,
-  "requestTimeoutSeconds": 5
+  "requestTimeoutSeconds": 5,
+  "logReadings": true
 }
 ```
 
@@ -81,6 +82,16 @@ Absolute Grid Flow = abs(total_act_power)
 If import and export appear reversed, enable `invertDirection`.
 
 HomeKit light sensors cannot represent an exact zero; this plugin sends `0.0001 lux`, which Apple Home normally rounds to zero. HomeKit also limits ambient light values to `100000 lux`, so readings above 100 kW are clamped.
+
+## Logging
+
+`logReadings` is enabled by default. Every successful poll is written to the normal Homebridge log:
+
+```text
+[Shelly Pro 3EM] Readings: Base Load=261 W, Surplus=0 W, Absolute Grid Flow=261 W.
+```
+
+Disable **Log Every Reading** in the plugin settings to keep only startup and error messages in the normal log. Successful readings remain available in Homebridge debug logging when this option is disabled.
 
 ## Development
 
