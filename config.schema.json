@@ -1,0 +1,77 @@
+{
+  "pluginAlias": "ShellyPro3EM",
+  "pluginType": "platform",
+  "singular": true,
+  "headerDisplay": "Expose Shelly Pro 3EM total grid power as three Apple Home light sensors. The displayed lux value represents watts. This dynamic platform supports Homebridge's standard child-bridge mode.",
+  "footerDisplay": "**Base Load** is the current residual grid draw, **Surplus** is power being fed into the grid, and **Absolute Grid Flow** is the value in either direction. Enable **Invert Direction** if the readings are reversed.",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "Device Name",
+        "type": "string",
+        "default": "Shelly Pro 3EM",
+        "required": true
+      },
+      "ip": {
+        "title": "Shelly IP Address",
+        "type": "string",
+        "placeholder": "192.168.0.24",
+        "required": true
+      },
+      "consumptionSensorName": {
+        "title": "Base Load Sensor Name",
+        "type": "string",
+        "default": "Shelly Pro 3EM Base Load",
+        "description": "Current residual power drawn from the grid."
+      },
+      "surplusSensorName": {
+        "title": "Surplus Sensor Name",
+        "type": "string",
+        "default": "Shelly Pro 3EM Surplus",
+        "description": "Surplus power currently being fed into the grid."
+      },
+      "netFlowSensorName": {
+        "title": "Absolute Grid Flow Sensor Name",
+        "type": "string",
+        "default": "Shelly Pro 3EM Absolute Grid Flow",
+        "description": "Absolute grid flow regardless of direction."
+      },
+      "invertDirection": {
+        "title": "Invert Direction",
+        "type": "boolean",
+        "default": false
+      },
+      "deadbandWatts": {
+        "title": "Zero Deadband (W)",
+        "type": "number",
+        "default": 1,
+        "minimum": 0,
+        "description": "Treat absolute readings below this value as zero."
+      },
+      "pollIntervalSeconds": {
+        "title": "Polling Interval (seconds)",
+        "type": "number",
+        "default": 10,
+        "minimum": 2
+      },
+      "requestTimeoutSeconds": {
+        "title": "Request Timeout (seconds)",
+        "type": "number",
+        "default": 5,
+        "minimum": 1
+      }
+    }
+  },
+  "form": [
+    "name",
+    "ip",
+    "consumptionSensorName",
+    "surplusSensorName",
+    "netFlowSensorName",
+    "invertDirection",
+    "deadbandWatts",
+    "pollIntervalSeconds",
+    "requestTimeoutSeconds"
+  ]
+}

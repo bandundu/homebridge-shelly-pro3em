@@ -1,0 +1,26 @@
+{
+  "name": "homebridge-shelly-pro3em",
+  "version": "0.1.0",
+  "description": "Expose Shelly Pro 3EM base load, surplus, and absolute grid flow as HomeKit light sensors.",
+  "license": "MIT",
+  "main": "index.js",
+  "engines": {
+    "node": ">=18.20.4",
+    "homebridge": ">=1.8.0"
+  },
+  "keywords": [
+    "homebridge-plugin",
+    "homebridge",
+    "homekit",
+    "shelly",
+    "shelly-pro-3em",
+    "energy-monitor"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check index.js && node --check lib/platform.js && node --check lib/power.js"
+  },
+  "peerDependencies": {
+    "homebridge": ">=1.8.0"
+  }
+}
